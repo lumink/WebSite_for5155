@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>게시글 등록</title>
+	<script>
+function check() {
+
+	var fr = document.getElementById("form");
+
+
+
+	if (fr.type.value.length <1 ) {
+		
+		alert("제목을 입력하세요");
+		return false;
+
+	} 
+	else if(fr.content.value.length<1){
+		
+		alert("내용을 입력하세요");
+		return false;
+		
+	}
+	else
+		fr.submit();
+}
+
+</script>
+</head>
+
+<body>
+<p style="text-align:center;">게시글 등록 완료</p>
+<hr/>
+<form id="form" action="write_ok.jsp" enctype="multipart/form-data" method="post" onsubmit="return check()">
+<table>
+	<tr>
+		<td bgcolor="gray"><p style="text-align:center;">제목 :</td>
+		<td><input type = "text" name="type" size="60"></td>
+	</tr>
+	<tr>
+		<td bgcolor="gray"><p style="text-align:center;">사진등록 :</td>
+		<td><input type="file" name="upfile" size=60></td>
+	</tr>
+	
+	
+</table>
+<hr>
+<table>
+	<tr>
+		<td bgcolor="gray"><p style="text-align:center;">내용</td>
+		<td><textarea name="content" rows="30" cols="80" style="overflow: scroll;"></textarea></td>
+	</tr>
+</table>
+<hr>
+<table>
+	<tr>
+		<td><input type="reset" value="다시 작성" style="text-align: center;"></td>
+		<td><input type="submit" value="등록" style="text-align: center;" ></td>
+	</tr>
+</table>
+
+</form>
+</body>
+</html>
